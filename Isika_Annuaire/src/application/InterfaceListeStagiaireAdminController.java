@@ -161,6 +161,17 @@ public class InterfaceListeStagiaireAdminController implements Initializable {
 		ObservableList<Stagiaire> listeDeRecherche = Noeud.rechercheStagiaire(raf, singleStagiaire);
 		tblStagiaire.setItems(listeDeRecherche);
 
+		reinitialisationForm();
+	}
+
+	@FXML
+	private void reinitialisationForm() {
+		txtNomRecherche.clear();
+		txtPrenomRecherche.clear();
+		txtDepartementRecherche.clear();
+		txtNomPromoRecherche.clear();
+		txtAnneePromoRecherche.clear();
+
 	}
 
 	@FXML
@@ -177,8 +188,8 @@ public class InterfaceListeStagiaireAdminController implements Initializable {
 			ObservableList<Stagiaire> listeDeRecherche = Noeud.rechercheStagiaire(raf, stagiaire);
 			tblStagiaire.setItems(listeDeRecherche);
 		} catch (Exception e1) {
-		}
 
+		}
 	}
 
 	@FXML
