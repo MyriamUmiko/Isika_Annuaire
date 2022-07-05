@@ -14,8 +14,7 @@ public class Noeud implements InterfaceTaille{
 	private Stagiaire stagiaire;
 	private int filsGauche;
 	private int filsDroit;
-//	public int indexFilsGauche;
-//	public int indexFilsDroit;
+
 
 
 	// constructor
@@ -59,33 +58,6 @@ public class Noeud implements InterfaceTaille{
 		this.filsDroit = filsDroit;
 	}
 
-//	public int toStringInfixe() {
-//		String result = "";
-//		if (this.filsGauche != 0) {
-//			result += this.filsGauche.toStringInfixe();
-//		}
-//		result += " " + stagiaire + "\n";
-//		if (this.filsDroit != 0) {
-//			result += this.filsDroit.toStringInfixe();
-//		}
-//		return result;
-//	}
-
-//	public void ajouterValeur(Noeud stagiaireAAjouter) {
-//		if (this.stagiaire.getNom().compareTo(stagiaireAAjouter.getStagiaire().getNom()) > 0) {
-//			if (this.filsGauche == null) {
-//				this.filsGauche = stagiaireAAjouter;
-//			} else {
-//				this.filsGauche.ajouterValeur(stagiaireAAjouter);
-//			}
-//		} else {
-//			if (this.filsDroit == null) {
-//				this.filsDroit = stagiaireAAjouter;
-//			} else {
-//				this.filsDroit.ajouterValeur(stagiaireAAjouter);
-//			}
-//		}
-//	}
 
 	@Override
 	public String toString() {
@@ -373,42 +345,7 @@ public class Noeud implements InterfaceTaille{
 		}
 		return null;
 	}
-//	public void ajouterNoeud(Noeud ajouterNoeud) {
-//		if ( raf.length()== 0) {
-//			racine = ajouterNoeud;
-//		} else {
-//			racine.ajouterValeur(ajouterNoeud);
-//		}
-//	}
-//	
-//	
-//	public static Noeud ajouterNoeud () {
-//		Noeud racine;
-//		try {
-//			if(racine.getNom.compare.(stagiaire.nom) >0) {
-//				if (racine.filsGauche == -1) {
-//					raf.seek(raf.getFilePointer(-8);
-//					noeud.infexFilsG +=index.racine.filsGauche
-//					ecrireNoeud
-//				randomAccessFile
-//				writeInt(indexFilsG = raf.length/taille N)
-//				ecrireNoeu(new Noeud)
-//				} 
-//				}
-//		} catch (Exception e) {
-//				e.printStackTrace();
-//		}
-//		}
 
-//	public int nombreTotalDesNoeuds(Noeud noeud) {
-//
-//		if (noeud == null) {
-//			return 0;
-//		} else {
-//			return 1 + nombreTotalDesNoeuds(noeud.filsDroit) + nombreTotalDesNoeuds(noeud.filsGauche);
-//		}
-//
-//	}
 
 	public static void remplirListe(RandomAccessFile raf) {
 
