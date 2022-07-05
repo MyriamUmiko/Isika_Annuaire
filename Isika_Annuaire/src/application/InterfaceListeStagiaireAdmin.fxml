@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1368.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InterfaceListeStagiaireAdminController">
+   <children>
+      <BorderPane prefHeight="768.0" prefWidth="1368.0">
+         <top>
+            <HBox prefHeight="65.0" prefWidth="768.0" style="-fx-background-color: #E38145;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="65.0" prefWidth="136.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Base de données - Stagiaire" wrappingWidth="226.6416015625">
+                     <font>
+                        <Font name="Malayalam MN" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="875.0" top="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ImageView fitHeight="41.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ISIKA/7.%20Projets/Projet1%20-%20application%20annuaire/logo.isika.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="40.0" right="14.0" top="14.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <VBox prefHeight="57.0" prefWidth="570.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="43.0" prefWidth="822.0">
+                     <children>
+                        <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#btnAjouter" prefHeight="42.0" prefWidth="119.0" style="-fx-border-color: #E38145; -fx-border-width: 2px 2px 2px 2px;" text="Ajouter">
+                           <HBox.margin>
+                              <Insets left="425.0" top="7.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSupprimer" mnemonicParsing="false" onAction="#btnSupprmier" prefHeight="42.0" prefWidth="119.0" style="-fx-border-color: #E38145; -fx-border-width: 2px 2px 2px 2px;" text="Supprimer">
+                           <HBox.margin>
+                              <Insets left="15.0" top="7.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnImpression" mnemonicParsing="false" onAction="#btnImpression" prefHeight="36.0" prefWidth="129.0" style="-fx-border-color: #E38145; -fx-border-width: 2px 2px 2px 2px;" text="Imprimer">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets left="15.0" top="7.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnDeconnexion" mnemonicParsing="false" onAction="#btnDeconnexion" prefHeight="44.0" prefWidth="160.0" style="-fx-border-color: #E38145; -fx-border-width: 3px 3px 3px 3px;" text="Deconnexion">
+                           <HBox.margin>
+                              <Insets left="285.0" top="7.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+         <left>
+            <AnchorPane prefHeight="646.0" prefWidth="1368.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tblStagiaire" layoutX="235.0" layoutY="109.0" prefHeight="529.0" prefWidth="859.0" style="-fx-border-color: #E38145;" AnchorPane.leftAnchor="235.0">
+                    <columns>
+                      <TableColumn fx:id="nom" prefWidth="234.0" text="NOM" />
+                      <TableColumn fx:id="prenom" prefWidth="216.0" text="Prénom" />
+                        <TableColumn fx:id="departement" prefWidth="136.0" text="Departement" />
+                        <TableColumn fx:id="nomPromo" prefWidth="146.0" text="nom de Promo" />
+                        <TableColumn fx:id="anneePromo" prefWidth="125.0" text="année Promo" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="txtNomRecherche" layoutX="99.0" layoutY="28.0" prefHeight="35.0" prefWidth="329.0" promptText="Nom" style="-fx-border-color: #B1ADAA; -fx-border-width: 2px 2px 2px 2px;">
+                     <font>
+                        <Font name="Malayalam MN" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtPrenomRecherche" layoutX="439.0" layoutY="28.0" prefHeight="35.0" prefWidth="246.0" promptText="Prénom" style="-fx-border-color: #B1ADAA; -fx-border-width: 2px 2px 2px 2px;">
+                     <font>
+                        <Font name="Malayalam MN" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtDepartementRecherche" layoutX="695.0" layoutY="28.0" prefHeight="35.0" prefWidth="119.0" promptText="Département" style="-fx-border-color: #B1ADAA; -fx-border-width: 2px 2px 2px 2px;">
+                     <font>
+                        <Font name="Malayalam MN" size="12.0" />
+                     </font></TextField>
+                  <Text layoutX="100.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recherche avancée : ">
+                     <font>
+                        <Font name="Malayalam MN Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtNomPromoRecherche" layoutX="824.0" layoutY="28.0" prefHeight="35.0" prefWidth="139.0" promptText="Nom de  formation" style="-fx-border-color: #B1ADAA; -fx-border-width: 2px 2px 2px 2px;">
+                     <font>
+                        <Font name="Malayalam MN" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtAnneePromoRecherche" layoutX="973.0" layoutY="28.0" prefHeight="35.0" prefWidth="124.0" promptText=" année Promo" style="-fx-border-color: #B1ADAA; -fx-border-width: 2px 2px 2px 2px;">
+                     <font>
+                        <Font name="Malayalam MN" size="12.0" />
+                     </font></TextField>
+                  <Button fx:id="btnRechercher" layoutX="1113.0" layoutY="28.0" mnemonicParsing="false" onAction="#btnRechecher" prefHeight="44.0" prefWidth="160.0" style="-fx-border-color: #E38145; -fx-border-width: 2px 2px 2px 2px;" text="Rechercher">
+                     <font>
+                        <Font name="Malayalam MN" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnUpdate" layoutX="1113.0" layoutY="165.0" mnemonicParsing="false" onAction="#btnUpdate" prefHeight="44.0" prefWidth="160.0" style="-fx-border-color: #E38145; -fx-border-width: 2px 2px 2px 2px;" text="Enregistrer">
+                     <font>
+                        <Font name="Malayalam MN" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnMiseAJour" layoutX="1113.0" layoutY="109.0" mnemonicParsing="false" onAction="#btnModifier" prefHeight="44.0" prefWidth="160.0" style="-fx-border-color: #E38145; -fx-border-width: 2px 2px 2px 2px;" text="Mise-à-jour">
+                     <font>
+                        <Font name="Malayalam MN" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

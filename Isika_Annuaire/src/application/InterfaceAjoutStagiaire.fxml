@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="738.0" prefWidth="1368.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InterfaceAjoutStagiaireController">
+   <children>
+      <BorderPane prefHeight="768.0" prefWidth="1368.0">
+         <top>
+            <HBox prefHeight="65.0" prefWidth="1354.0" style="-fx-background-color: #E38145;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseignement - Stagiaire" wrappingWidth="219.21630859375">
+                     <font>
+                        <Font name="Malayalam MN" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="1025.0" top="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ImageView fitHeight="41.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ISIKA/7.%20Projets/Projet1%20-%20application%20annuaire/logo.isika.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="40.0" right="14.0" top="14.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <Pane prefHeight="547.0" prefWidth="1368.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="236.0" layoutY="107.0" prefHeight="419.0" prefWidth="896.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextField fx:id="txtNomStagiaire" layoutX="403.0" layoutY="61.0" prefHeight="33.0" prefWidth="280.0" promptText=" ENTRER NOM du stagiaire" style="-fx-border-color: #A29D97; -fx-border-width: 2px 2px 2px 2px;">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets left="150.0" />
+                           </opaqueInsets>
+                        </TextField>
+                        <TextField fx:id="txtPrenomStagiaire" layoutX="403.0" layoutY="117.0" prefHeight="33.0" prefWidth="280.0" promptText="ENTRER Prénom du stagiaire" style="-fx-border-color: #A29D97; -fx-border-width: 2px 2px 2px 2px;">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtNomPromo" layoutX="403.0" layoutY="229.0" prefHeight="33.0" prefWidth="214.0" promptText="ENTRER nom de la promotion" style="-fx-border-color: #A29D97; -fx-border-width: 2px 2px 2px 2px;">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtAnneePromo" layoutX="403.0" layoutY="284.0" prefHeight="33.0" prefWidth="214.0" promptText="ENTRER année de la promotion" style="-fx-border-color: #A29D97; -fx-border-width: 2px 2px 2px 2px;">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtDepartement" layoutX="403.0" layoutY="172.0" prefHeight="33.0" prefWidth="214.0" promptText="ENTRER  le département" style="-fx-border-color: #A29D97; -fx-border-width: 2px 2px 2px 2px;">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="loginMessageLabel" layoutX="33.0" layoutY="22.0" prefHeight="20.0" prefWidth="311.0" textFill="#225b32">
+                           <font>
+                              <Font name="Malayalam MN" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="309.0" layoutY="60.0" prefHeight="35.0" prefWidth="43.0" text="NOM" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="291.0" layoutY="115.0" prefHeight="33.0" prefWidth="62.0" text="Prénom" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </Label>
+                        <Text fill="#d71010" layoutX="388.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                           <font>
+                              <Font name="Malayalam MN" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#d71010" layoutX="388.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                           <font>
+                              <Font name="Malayalam MN" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#d71010" layoutX="388.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                           <font>
+                              <Font name="Malayalam MN" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#d71010" layoutX="389.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                           <font>
+                              <Font name="Malayalam MN" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#d71010" layoutX="388.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                           <font>
+                              <Font name="Malayalam MN" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="176.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Département (format DD)" textAlignment="CENTER" wrappingWidth="165.68994140625">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="204.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de la Promotion" wrappingWidth="134.56591796875">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="197.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Année de la formation" wrappingWidth="138.56591796875">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </center>
+         <bottom>
+            <Pane prefHeight="85.0" prefWidth="1368.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="87.0" prefWidth="1368.0">
+                     <children>
+                        <Button fx:id="btnEnregistrer" mnemonicParsing="false" onAction="#btnEnregistrer" prefHeight="41.0" prefWidth="169.0" style="-fx-border-color: #E38145; -fx-border-width: 2px 2px 2px 2px;" text="Enregistrer">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="508.0" top="19.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnVoirListe" mnemonicParsing="false" onAction="#btnVoirListe" prefHeight="41.0" prefWidth="167.0" style="-fx-border-color: #E38145; -fx-border-width: 2px 2px 2px 2px;" text="Retour Liste Stagiaire">
+                           <font>
+                              <Font name="Malayalam MN" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" top="19.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
