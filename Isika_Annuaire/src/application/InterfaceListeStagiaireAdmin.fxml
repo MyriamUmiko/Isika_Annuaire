@@ -33,7 +33,7 @@
                   </Text>
                   <ImageView fitHeight="41.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../ISIKA/7.%20Projets/Projet1%20-%20application%20annuaire/logo.isika.png" />
+                        <Image url="@../../../../../Desktop/ISIKA/7.%20Projets/Projet1%20-%20application%20annuaire/logo.isika.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="40.0" right="14.0" top="14.0" />

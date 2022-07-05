@@ -20,7 +20,7 @@
          <children>
             <ImageView fitHeight="753.0" fitWidth="1170.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Sans-titre-4.png" />
+                  <Image url="@../../../../../Desktop/Sans-titre-4.png" />
                </image>
             </ImageView>
             <Pane layoutX="364.0" layoutY="130.0" prefHeight="392.0" prefWidth="537.0" />
@@ -28,7 +28,7 @@
                <children>
                   <ImageView fitHeight="71.0" fitWidth="131.0" layoutX="179.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../ISIKA/7.%20Projets/Projet1%20-%20application%20annuaire/logo.isika.png" />
+                        <Image url="@../../../../../Desktop/ISIKA/7.%20Projets/Projet1%20-%20application%20annuaire/logo.isika.png" />
                      </image>
                   </ImageView>
                </children>

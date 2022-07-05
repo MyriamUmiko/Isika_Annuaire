@@ -89,7 +89,7 @@ public class InterfaceListeStagiaireAdminController implements Initializable {
 
 	@FXML
 	private Button btnDeconnexion;
-	
+
 	@FXML
 	private Button btnModifier;
 
@@ -103,10 +103,9 @@ public class InterfaceListeStagiaireAdminController implements Initializable {
 	private void btnDeconnexion(Event e) throws IOException {
 		Main m = new Main();
 		m.changeScene("InterfaceLogin.fxml");
-		
+
 	}
 
-	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		nom.setCellValueFactory(new PropertyValueFactory<Stagiaire, String>("Nom"));
@@ -118,52 +117,51 @@ public class InterfaceListeStagiaireAdminController implements Initializable {
 		tblStagiaire.setItems(Main.stagiaire);
 
 	}
-	
+
 	@FXML
-    public void btnModifier(ActionEvent actionEvent) {
+	public void btnModifier(ActionEvent actionEvent) {
 
-        //set data
-        Stagiaire singleStagiaire = tblStagiaire.getSelectionModel().getSelectedItem();
-        String nom = singleStagiaire.getNom();
-        String prenom = singleStagiaire.getPrenom();
-        String departement = singleStagiaire.getDepartement();
-        String nomPromo = singleStagiaire.getNomPromo();
-        String anneePromo = singleStagiaire.getAnneePromo();
+		// set data
+		Stagiaire singleStagiaire = tblStagiaire.getSelectionModel().getSelectedItem();
+		String nom = singleStagiaire.getNom();
+		String prenom = singleStagiaire.getPrenom();
+		String departement = singleStagiaire.getDepartement();
+		String nomPromo = singleStagiaire.getNomPromo();
+		String anneePromo = singleStagiaire.getAnneePromo();
 
-        //set textfield
-        txtNomRecherche.setText(nom);
-        txtPrenomRecherche.setText(prenom);
-        txtDepartementRecherche.setText(departement);
-        txtNomPromoRecherche.setText(nomPromo);
-        txtAnneePromoRecherche.setText(anneePromo);
+		// set textfield
+		txtNomRecherche.setText(nom);
+		txtPrenomRecherche.setText(prenom);
+		txtDepartementRecherche.setText(departement);
+		txtNomPromoRecherche.setText(nomPromo);
+		txtAnneePromoRecherche.setText(anneePromo);
 //    
-    }
-      @FXML
-    public void btnUpdate(ActionEvent actionEvent) throws FileNotFoundException {
-        
-    	RandomAccessFile raf = new RandomAccessFile("src/mesFichiers/listeStagiaire.bin", "rw"); 
-        Stagiaire singleStagiaire = tblStagiaire.getSelectionModel().getSelectedItem();
-          
-         
-         //une ligne selectionné 
-        String nom = txtNomRecherche.getText();
-        String prenom = txtPrenomRecherche.getText();
-        String departement = txtDepartementRecherche.getText();
-        String nomPromo = txtNomPromoRecherche.getText();
-        String anneePromo = txtAnneePromoRecherche.getText();
-        
-         
-        //set update value
-        singleStagiaire.setNom(nom);
-        singleStagiaire.setPrenom(prenom);
-        singleStagiaire.setDepartement(departement);
-        singleStagiaire.setNomPromo(nomPromo);
-        singleStagiaire.setAnneePromo(anneePromo);
-        
-        ObservableList<Stagiaire> listeDeRecherche=Noeud.rechercheStagiaire(raf, singleStagiaire);
+	}
+
+	@FXML
+	public void btnUpdate(ActionEvent actionEvent) throws FileNotFoundException {
+
+		RandomAccessFile raf = new RandomAccessFile("src/mesFichiers/listeStagiaire.bin", "rw");
+		Stagiaire singleStagiaire = tblStagiaire.getSelectionModel().getSelectedItem();
+
+		// une ligne selectionné
+		String nom = txtNomRecherche.getText();
+		String prenom = txtPrenomRecherche.getText();
+		String departement = txtDepartementRecherche.getText();
+		String nomPromo = txtNomPromoRecherche.getText();
+		String anneePromo = txtAnneePromoRecherche.getText();
+
+		// set update value
+		singleStagiaire.setNom(nom);
+		singleStagiaire.setPrenom(prenom);
+		singleStagiaire.setDepartement(departement);
+		singleStagiaire.setNomPromo(nomPromo);
+		singleStagiaire.setAnneePromo(anneePromo);
+
+		ObservableList<Stagiaire> listeDeRecherche = Noeud.rechercheStagiaire(raf, singleStagiaire);
 		tblStagiaire.setItems(listeDeRecherche);
-        
-    }
+
+	}
 
 	@FXML
 	private void btnRechecher(Event e) throws IOException {
@@ -172,74 +170,66 @@ public class InterfaceListeStagiaireAdminController implements Initializable {
 		String departementRecherche = txtDepartementRecherche.getText();
 		String nomPromoRecherche = txtNomPromoRecherche.getText();
 		String anneePromoRecherche = txtAnneePromoRecherche.getText();
-		Stagiaire stagiaire=new Stagiaire(nomRecherche, prenomRecherche, departementRecherche, nomPromoRecherche, anneePromoRecherche);
+		Stagiaire stagiaire = new Stagiaire(nomRecherche, prenomRecherche, departementRecherche, nomPromoRecherche,
+				anneePromoRecherche);
 		try {
 			RandomAccessFile raf = new RandomAccessFile("src/mesFichiers/listeStagiaire.bin", "rw");
-			ObservableList<Stagiaire> listeDeRecherche=Noeud.rechercheStagiaire(raf, stagiaire);
+			ObservableList<Stagiaire> listeDeRecherche = Noeud.rechercheStagiaire(raf, stagiaire);
 			tblStagiaire.setItems(listeDeRecherche);
-		}catch (Exception e1) {
+		} catch (Exception e1) {
 		}
-		
+
 	}
 
 	@FXML
 	private void btnImpression(Event e) {
-		
-			Printer myPrinter = Printer.getDefaultPrinter();
-			myPrinter.createPageLayout(Paper.A4, PageOrientation.PORTRAIT, MarginType.HARDWARE_MINIMUM);
-			PrinterJob printerJob = PrinterJob.createPrinterJob(myPrinter);
-			ObservableList<Stagiaire> stagiaires = tblStagiaire.getItems();
-			Label printed = new Label();
-			for (Stagiaire stagiaire : stagiaires) {
-				printed.setText(printed.getText() + stagiaire.toString() + "\n");
+		Printer printer = Printer.getDefaultPrinter();
+		PageLayout layout = printer.createPageLayout(Paper.A3, PageOrientation.LANDSCAPE, Printer.MarginType.DEFAULT);
+		PrinterJob job = PrinterJob.createPrinterJob();
+
+		if (job != null) {
+			job.getJobSettings().setJobName("test d'impression");
+			if (job.showPrintDialog((Stage) btnImpression.getScene().getWindow())) {
+				ObservableList<Node> listeTable = tblStagiaire.getChildrenUnmodifiable();
+				for (Node n : listeTable)
+					job.printPage(layout, n);
+			} else {
+				System.out.println("impression annulée");
 			}
-			while (printerJob.getJobStatus() != PrinterJob.JobStatus.CANCELED && printerJob.printPage(printed)) {
-				if (printed.getText().length() > 2752) {
-					printed.setText(printed.getText().substring(2752));
-				} else {
-					break;
-				}
-			}
-			if (printerJob.getJobStatus() == PrinterJob.JobStatus.PRINTING) {
-				Alert alert = new Alert(AlertType.INFORMATION);
-				alert.setTitle("Impression");
-				alert.setHeaderText("");
-				alert.setContentText("Impression terminée");
-				alert.showAndWait();
-			}
-			printerJob.endJob();
+			job.endJob();
+
 		}
-	
+	}
+
 	@FXML
 	private void btnSupprmier(ActionEvent actionEvent) throws IOException {
 		Main m = new Main();
-		//ObservableList<Stagiaire> allStagiaire, singleStagiaire;
-		
+		// ObservableList<Stagiaire> allStagiaire, singleStagiaire;
+
 		Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("Suppression des données");
 		alert.setHeaderText("Etes-vous sûr de vouloir supprimer cette ligne ?");
 		Optional<ButtonType> option = alert.showAndWait();
-		
-		if(option.get()==ButtonType.OK) {
+
+		if (option.get() == ButtonType.OK) {
 			Stagiaire singleStagiaire = tblStagiaire.getSelectionModel().getSelectedItem();
-			
-			
-				RandomAccessFile raf = new RandomAccessFile("src/mesFichiers/listeStagiaire.bin", "rw");
-				raf.seek(0);
-				Noeud.supprimer(raf,singleStagiaire.getNom(),0);
-		
+
+			RandomAccessFile raf = new RandomAccessFile("src/mesFichiers/listeStagiaire.bin", "rw");
+			raf.seek(0);
+			Noeud.supprimer(raf, singleStagiaire.getNom(), 0);
+
 			Main.stagiaire.remove(tblStagiaire.getSelectionModel().getSelectedItem());
-			ObservableList<Stagiaire> listeDeRecherche=Noeud.rechercheStagiaire(raf, singleStagiaire);
+			ObservableList<Stagiaire> listeDeRecherche = Noeud.rechercheStagiaire(raf, singleStagiaire);
 			tblStagiaire.setItems(listeDeRecherche);
-		} else if (option.get() == ButtonType.CANCEL){
-			
+		} else if (option.get() == ButtonType.CANCEL) {
+
 		}
-		
+
 //		ObservableList<Stagiaire> allStagiaire, singleStagiaire;
-		//allStagiaire = tblStagiaire.getItems();
+		// allStagiaire = tblStagiaire.getItems();
 //		singleStagiaire = tblStagiaire.getSelectionModel().getSelectedItems();
-	//	singleStagiaire.forEach(allStagiaire::remove);
-		
+		// singleStagiaire.forEach(allStagiaire::remove);
+
 	}
-	
+
 }
